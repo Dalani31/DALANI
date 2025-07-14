@@ -144,7 +144,31 @@
         opacity: 1;
       }
     }
-  </style>
+  
+    .navbar {
+      background-color: #732d91;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .nav-btn {
+      display: inline-block;
+      background-color: #fff;
+      color: #732d91;
+      padding: 10px 16px;
+      margin: 6px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #8e44ad;
+      color: white;
+    }
+
+</style>
 </head>
 <body>
 
@@ -153,13 +177,15 @@
     <h1>Welcome to DALANI’s Creative World</h1>
   </header>
 
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  
+<nav class="navbar">
+  <a class="nav-btn" href="#about">About Me</a>
+  <a class="nav-btn" href="#services">Services</a>
+  <a class="nav-btn" href="#gallery">Gallery</a>
+  <a class="nav-btn" href="#testimonials">Testimonials</a>
+  <a class="nav-btn" href="#contact">Contact</a>
+</nav>
+
 
   <section id="about">
     <h2>About Me</h2>
