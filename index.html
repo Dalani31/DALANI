@@ -1,125 +1,79 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DALANI | Creative Portfolio</title>
+
   <style>
-    * {
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fefcea, #f1e1ff);
+      color: #2e2e2e;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+      line-height: 1.6;
     }
-
-    body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #fefcea, #f1e1ff);
-  color: #2e2e2e;
-  line-height: 1.6;
-}
 
     header {
       background-color: #8e44ad;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      height: 45px;
-      border-radius: 50%;
-    }
-
-    .logo span {
-      color: #fff;
-      font-size: 22px;
-      font-weight: bold;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
 
     nav {
-      display: flex;
-      gap: 20px;
+      background-color: #732d91;
+      text-align: center;
+      padding: 10px;
     }
 
     nav a {
-      color: #fff;
+      color: white;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: 500;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #8e44ad;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        padding: 20px;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+      font-weight: bold;
     }
 
     section {
-      padding: 80px 30px;
+      padding: 40px 20px;
       max-width: 1000px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     h2 {
       color: #8e44ad;
-      margin-bottom: 15px;
-      font-size: 28px;
+      text-align: center;
     }
 
-    p, li {
-      font-size: 17px;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .contact input,
-    .contact textarea {
+    #gallery img {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
+      max-width: 250px;
+      margin: 10px;
+      border-radius: 10px;
     }
 
-    .contact button {
-      background: #8e44ad;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #8e44ad;
       color: white;
-      padding: 10px 20px;
+      padding: 12px;
       border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
 
@@ -130,75 +84,144 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    /* Testimonials Section */
+    .testimonials {
+      background-color: #fff;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .testimonial-cards {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .card p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .card span {
+      font-weight: bold;
+      color: #8e44ad;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    @keyframes fadeUp {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">
-      <img src="logo.jpeg" alt="DALANI Logo" />
-      <span>@DALANI31</span>
-    </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav id="navbar">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <img src="logo.jpeg" alt="DALANI Logo" style="max-height: 100px; border-radius: 12px;" />
+    <h1>Welcome to DALANI’s Creative World</h1>
   </header>
+
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am DALANI — a digital creative designer. I create logos, emojis, banners, GIFs, websites, memes, NFTs, and more.</p>
+    <p>Hello! I'm DALANI, a passionate creative artist. I design everything from emojis and logos to viral memes, NFTs, and full websites. I mix creativity with vision to bring every idea to life in stunning visuals.</p>
   </section>
 
   <section id="services">
     <h2>Services</h2>
     <ul>
-      <li>Custom Emojis & Stickers</li>
-      <li>Logo & Banner Design</li>
-      <li>Web & Domain Design</li>
-      <li>Welcome GIFs, Viral Videos & Memes</li>
-      <li>NFT Artwork Creation</li>
+      <li>🎨 Logo Design</li>
+      <li>😊 Emoji & Sticker Packs</li>
+      <li>📢 Banner & Viral Ads</li>
+      <li>🎬 GIFs & Animated Content</li>
+      <li>🌐 Website & Domain Setup</li>
+      <li>💥 NFT Art & Meme Marketing</li>
     </ul>
   </section>
 
   <section id="gallery">
     <h2>Gallery</h2>
-    <p>Showcase your designs here. Upload images to GitHub and embed them here later.</p>
+    <p>Gallery coming soon — stay tuned for DALANI’s showcase of projects!</p>
   </section>
 
-  <section id="testimonials">
-  <h2>Testimonials</h2>
-  <p>“DALANI is 🔥 — best designs I’ve ever seen!” – Happy Client</p>
-  <p>“Quick delivery and stunning creativity. Highly recommended.” – Linda G.</p>
-  <p>“Every piece feels custom and unique. You won’t regret working with DALANI.” – MotionFX Studio</p>
-  <p>“My brand went viral thanks to the memes and GIFs he made!” – DME Clothing</p>
-  <p>“5 stars. Professional, fast, and unbelievably good.” – SamTrix</p>
-</section>
+  <section id="testimonials" class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-cards">
+      <div class="card">
+        <p>“DALANI is 🔥 — best designs I’ve ever seen!”</p>
+        <span>– Happy Client</span>
+      </div>
+      <div class="card">
+        <p>“Quick delivery and stunning creativity. Highly recommended.”</p>
+        <span>– Linda G.</span>
+      </div>
+      <div class="card">
+        <p>“Every piece feels custom and unique. You won’t regret working with DALANI.”</p>
+        <span>– MotionFX Studio</span>
+      </div>
+      <div class="card">
+        <p>“My brand went viral thanks to the memes and GIFs he made!”</p>
+        <span>– DME Clothing</span>
+      </div>
+      <div class="card">
+        <p>“5 stars. Professional, fast, and unbelievably good.”</p>
+        <span>– SamTrix</span>
+      </div>
+    </div>
+  </section>
 
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2>Contact Me</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send</button>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 DALANI31 – All Rights Reserved.
+    <p>© 2025 DALANI. All rights reserved.</p>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      const navbar = document.getElementById('navbar');
-      navbar.classList.toggle('show');
-    }
-  </script>
 
 </body>
 </html>
