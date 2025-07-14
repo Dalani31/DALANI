@@ -163,10 +163,39 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    .nav-btn:hover {
-      background-color: #8e44ad;
-      color: white;
-    }
+    .social-links-row {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-btn {
+  color: #ffffff;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  background: #732d91;
+  padding: 10px 18px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.social-btn:hover {
+  background: #ffffff;
+  color: #8e44ad;
+}
+
+.social-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
 
 </style>
 </head>
@@ -246,11 +275,16 @@
   </section>
 
   <footer>
-    <p>© 2025 DALANI. All rights reserved.</p>
-
-  <div class="social-links">
-    <a href="https://x.com/dalani31?s=21" target="_blank">🐦 @Dalani31</a>
-    <a href="https://t.me/+lbfagjUH4FY4MmE1" target="_blank">📲 Telegram Channel</a>
+  <p>© 2025 DALANI. All rights reserved.</p>
+  <div class="social-links-row">
+    <a class="social-btn" href="https://x.com/dalani31?s=21" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter" />
+      Follow me on Twitter
+    </a>
+    <a class="social-btn" href="https://t.me/+lbfagjUH4FY4MmE1" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/2111/2111646.png" alt="Telegram" />
+      Join my Telegram Channel
+    </a>
   </div>
 </footer>
 
